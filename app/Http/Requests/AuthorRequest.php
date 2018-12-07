@@ -3,7 +3,9 @@
 namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
+use App\Models\Genre;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\App;
 
 class AuthorRequest extends FormRequest
 {
@@ -25,8 +27,13 @@ class AuthorRequest extends FormRequest
      */
     public function rules()
     {
+
         return [
-            // 'name' => 'required|min:5|max:255'
+            'name' => 'required|min:5|max:255',
+            'about' => 'required|min:5|max:255',
+            'birthday' => 'required',
+            'profession' => 'required',
+            'country' => 'required',
         ];
     }
 

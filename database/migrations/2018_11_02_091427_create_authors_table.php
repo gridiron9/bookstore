@@ -17,11 +17,14 @@ class CreateAuthorsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('about');
+            $table->string('avatar');
             $table->date('birthday')->nullable();
             $table->date('deathday')->nullable();
             $table->string('profession');
             $table->string('website')->nullable();
             $table->string('country');
+            $table->string('facebook_page')->nullable();
+            $table->string('twitter_page')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

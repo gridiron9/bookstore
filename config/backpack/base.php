@@ -19,13 +19,13 @@ return [
     'logo_mini' => '<b>B</b>p',
 
     // Developer or company name. Shown in footer.
-    'developer_name' => 'Cristian Tabacitu',
+    'developer_name' => 'Crisstian Tabacitu',
 
     // Developer website. Link in footer.
     'developer_link' => 'http://tabacitu.ro',
 
     // Show powered by Laravel Backpack in the footer?
-    'show_powered_by' => true,
+    'show_powered_by' => false,
 
     // The AdminLTE skin. Affects menu color and primary/secondary colors used throughout the application.
     'skin' => 'skin-purple',
@@ -56,7 +56,7 @@ return [
     | By default the registration is open only on localhost.
     */
 
-    'registration_open' => env('BACKPACK_REGISTRATION_OPEN', env('APP_ENV') === 'local'),
+    'registration_open' => false,
 
     /*
     |--------------------------------------------------------------------------

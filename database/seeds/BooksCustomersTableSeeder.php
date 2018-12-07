@@ -15,7 +15,7 @@ class BooksCustomersTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        for($i = 0;$i < rand(2, 5); $i++) {
+        for($i = 0;$i < rand(2, 7); $i++) {
             DB::table('books_customers')->insert([
                 'book_id' => $faker->numberBetween($min = 1, $max = App\Models\Author::all()->count()),
                 'customer_id' => $faker->numberBetween($min = 1, $max = App\Models\Author::all()->count()),

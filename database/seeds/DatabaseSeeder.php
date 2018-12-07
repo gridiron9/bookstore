@@ -15,11 +15,13 @@ class DatabaseSeeder extends Seeder
         $author = factory(App\Models\Author::class,5)->create();
         $customer = factory(App\Models\Customer::class,5)->create();
         $genre = factory(App\Models\Genre::class,5)->create();
+        $book_images = factory(App\Book_images::class,5)->create();
         //$users = factory(App\User::class,5);
         $this->call([
             BooksGenresTableSeeder::class,
             BooksAuthorsTableSeeder::class,
-            BooksCustomersTableSeeder::class
+            BooksCustomersTableSeeder::class,
+            AuthorsGenresTableSeeder::class
         ]);
     }
 }

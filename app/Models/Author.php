@@ -11,8 +11,11 @@ class Author extends Model
     use CrudTrait;
     use SoftDeletes;
 
-    public function book(){
-        return $this->belongsToMany(Author::class,'books_authors');
+    public function books(){
+        return $this->belongsToMany(Book::class,'books_authors');
+    }
+    public function genres(){
+        return $this->belongsToMany(Genre::class,'authors_genres');
     }
 
     protected $fillable = ['about','name','birthday','deathday','profession','website','country'];

@@ -20,9 +20,11 @@ class CreateBooksTable extends Migration
             $table->integer('solds');
             $table->string('size');
             $table->string('pages');
+            $table->string('language');
             $table->string('about');
             $table->string('img_path');
             $table->string('price');
+            $table->string('discount')->nullable();
             $table->enum('cover',['paperback','hardback']);
             $table->date('published_at')->nullable();
             $table->boolean('best_seller')->default(false);

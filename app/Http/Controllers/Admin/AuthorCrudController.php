@@ -33,8 +33,68 @@ class AuthorCrudController extends CrudController
         */
 
         // TODO: remove setFromDb() and manually define Fields and Columns
-        $this->crud->setFromDb();
-
+        //$this->crud->setFromDb();
+        /***************************************/
+        ////////////Add Column part///////////////
+        /**************************************/
+        $this->crud->addColumn([
+            'name' => 'id',
+            'type' => 'number',
+            'label' => "ID",
+        ]);
+        $this->crud->addColumn([
+            'name' => 'name',
+            'type' => 'text',
+            'label' => "Name",
+        ]);
+        $this->crud->addColumn([
+            'name' => 'profession',
+            'type' => 'text',
+            'label' => "Profession",
+        ]);
+        $this->crud->addColumn([
+            'name' => 'website',
+            'type' => 'text',
+            'label' => "Website",
+        ]);
+        $this->crud->addColumn([
+            'name' => 'country',
+            'type' => 'text',
+            'label' => "Country",
+        ]);
+        /***************************************/
+        ////////////Add Field part///////////////
+        /**************************************/
+        $this->crud->addField([
+            'name' => 'name',
+            'type' => 'text',
+            'label' => "Name",
+        ]);
+        $this->crud->addField([
+            'name' => 'about',
+            'type' => 'ckeditor',
+            'label' => "Information",
+        ]);
+        $this->crud->addField([
+            'name' => 'deathday',
+            'type' => 'date',
+            'label' => "The day author passed away",
+        ]);
+        $this->crud->addField([
+            'name' => 'profession',
+            'type' => 'text',
+            'label' => "Working place",
+        ]);
+        $this->crud->addField([
+            'name' => 'website',
+            'type' => 'url',
+            'label' => "Web site",
+        ]);
+        $this->crud->addField([
+            'name' => 'country',
+            'type' => 'text',
+            'label' => "Country",
+        ]);
         // add asterisk for fields that are required in AuthorRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');
         $this->crud->setRequiredFields(UpdateRequest::class, 'edit');

@@ -33,7 +33,52 @@ class CustomerCrudController extends CrudController
         */
 
         // TODO: remove setFromDb() and manually define Fields and Columns
-        $this->crud->setFromDb();
+        //$this->crud->setFromDb();
+        /***************************************/
+        ////////////Add Column part///////////////
+        /**************************************/
+        $this->crud->addColumn([
+            'name' => 'id',
+            'type' => 'number',
+            'label' => "ID",
+        ]);
+        $this->crud->addColumn([
+            'name' => 'full_name',
+            'type' => 'text',
+            'label' => "Full name",
+        ]);
+        $this->crud->addColumn([
+            'name' => 'email',
+            'type' => 'text',
+            'label' => "Email",
+        ]);
+        $this->crud->addColumn([
+            'name' => 'avatar',
+            'type' => 'Image',
+            'label' => "Avatar",
+            'height' => '100px',
+            'weight' => '100px'
+        ]);
+
+
+        /***************************************/
+        ////////////Add field part///////////////
+        /**************************************/
+        $this->crud->addField([
+            'name' => 'full_name',
+            'type' => 'text',
+            'label' => "Full name",
+        ]);
+        $this->crud->addField([
+            'name' => 'email',
+            'type' => 'email',
+            'label' => "Email",
+        ]);
+        $this->crud->addField([
+            'name' => 'avatar',
+            'type' => 'browse',
+            'label' => "Avatar",
+        ]);
 
         // add asterisk for fields that are required in CustomerRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');

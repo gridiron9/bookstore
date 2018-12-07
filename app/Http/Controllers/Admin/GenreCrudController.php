@@ -33,7 +33,38 @@ class GenreCrudController extends CrudController
         */
 
         // TODO: remove setFromDb() and manually define Fields and Columns
-        $this->crud->setFromDb();
+        // $this->crud->setFromDb();
+        /***************************************/
+        ////////////Add Column part///////////////
+        /**************************************/
+        $this->crud->addColumn([
+            'name' => 'id',
+            'type' => 'number',
+            'label' => "ID",
+        ]);
+        $this->crud->addColumn([
+            'name' => 'name',
+            'type' => 'text',
+            'label' => "Name",
+        ]);
+        $this->crud->addColumn([
+            'name' => 'info',
+            'type' => 'text',
+            'label' => "Information",
+        ]);
+        /***************************************/
+        ////////////Add Field part///////////////
+        /**************************************/
+        $this->crud->addField([
+            'name' => 'name',
+            'type' => 'text',
+            'label' => "Name",
+        ]);
+        $this->crud->addField([
+            'name' => 'info',
+            'type' => 'ckeditor',
+            'label' => "Information",
+        ]);
 
         // add asterisk for fields that are required in GenreRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');

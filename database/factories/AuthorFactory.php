@@ -10,8 +10,11 @@
          'birthday' =>$faker->dateTime($max = 'now'),
          'deathday' => $faker->dateTime($max = 'now'),
          'profession' => $faker->jobTitle,
-         'website' => $faker->domainName,
+         'avatar' => $faker->imageUrl($width = 270, $height = 390),
+         'website' => $faker->url,
          'country' => $faker->country,
+         'facebook_page' => $faker->url,
+         'twitter_page' => $faker->url,
          'created_at' => $faker->dateTime($max = 'now', $timezone = null),
          'updated_at' => $faker->dateTime($max = 'now', $timezone = null)
      ];
